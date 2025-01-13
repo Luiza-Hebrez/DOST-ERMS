@@ -23,7 +23,8 @@
             height: 100vh; /* Ensures the section spans full screen height */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;;
+            padding-top: 150px;
             color: white;
             text-align: center;
         }
@@ -43,11 +44,12 @@
         .hero-content {
             position: relative;
             z-index: 3; /* Places the content above the image and overlay */
-            background-color: rgba(0, 114, 206, 0.5); /* 50% transparent #0072ce */
+            background-color: rgba(0, 114, 206, 0.82); /* 82% transparent #0072ce */
             padding: 60px; /* Padding for content */
             border-radius: 10px; /* Optional: rounded corners */
             max-width: 800px; /* Optional: limit the width of the box */
             margin: auto; /* Center the box horizontally */
+            margin-top: -5px;
         }
 
         .hero-content h1 {
@@ -75,6 +77,9 @@
             border-radius: 5px;
             font-size: 16px;
             text-decoration: none;
+            position: relative;
+            top: 20px;
+            font-weight: bold;
         }
 
         .register-button:hover {
@@ -97,7 +102,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ab">About Us</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Event</a></li>
                     <li class="nav-item"><a class="nav-link" href="#!">Contact Us</a></li>
                 </ul>
@@ -116,7 +121,7 @@
             <h1>DOST Event Registration Management System</h1>
             <p>Transforming How Events Are Managed and Experienced.<br>
                From registration to engagement, we create efficient solutions for all.</p>
-            <a href="#" class="register-button">Register Now</a>
+            <a href="#" class="register-button" id="register-btn">Register Now</a>
         </div>
     </main>
 
@@ -129,7 +134,7 @@
             </div>
             <div class="col-lg-5">
                 <h1 class="font-weight-light">DOST-STII and ASLP Library Seminar</h1>
-                <h6 class="font-weight-light" >Febraury 9 | DOST Main Building</h6>
+                <h6 class="font-weight-light" >February 9 | DOST Main Building</h6>
                 <p>A librarian beginner guide that helps to improve your skills and develop your manegerial capacity. Let's learn while having fun with our prepared activities for anyone.</p>
                 <a class="btn btn-primary" href="#!">Join Now!</a>
             </div>
@@ -177,5 +182,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS -->
     <script src="js/scripts.js"></script>
+
+
+    <!-- JavaScript to make the button clickable -->
+    <script>
+    document.getElementById('register-btn').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior (for the demo)
+
+        // Action when clicked (can be a redirect or open a modal, etc.)
+        alert('You clicked the Register Now button!');
+        
+        // Example of redirecting to another page
+        // window.location.href = 'registration-page-url'; // Uncomment and replace the URL
+    });
+</script>
 </body>
 </html>
