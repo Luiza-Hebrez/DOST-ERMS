@@ -20,6 +20,6 @@ Route::get('create-account', function () {
     return view('create-account');
 });
 
-Route::get('login', function () {
-    return view('login-account');
-});
+Route::get('/login-account', function () {
+    return view('login-account'); 
+}); 
