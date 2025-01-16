@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -19,28 +20,27 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f0f0f0; /* Neutral light background */
+            background-color: #f0f0f0;
             font-family: 'Roboto', sans-serif;
         }
 
         .container {
             display: flex;
-            width: 90vw; 
-            max-width: 1920px; 
-            height: 90vh; 
+            width: 90vw;
+            max-width: 1920px;
+            height: 90vh;
             max-height: 1080px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
-        /* Left Section */
         .left-section {
             flex: 2.1;
             position: relative;
             background: url('/image/createaccbg.jpg') no-repeat center center;
             background-size: 150%;
-            background-position: top center; /* Moves the focus of the image upwards */
+            background-position: top center;
         }
 
         .left-section::before {
@@ -54,7 +54,6 @@
             opacity: 0.3;
         }
 
-        /* Right Section */
         .right-section {
             flex: 1.5;
             background-color: #FFFFFF;
@@ -91,6 +90,24 @@
             font-size: 14px;
         }
 
+        .password-container {
+            position: relative;
+        }
+
+        .password-container input {
+            padding-right: 40px; 
+        }
+
+        .password-container .toggle-password {
+            position: absolute;
+            top: 50%; 
+            right: 15px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 18px;
+            color: #666;
+        }
+
         .form-container .btn-primary {
             width: 100%;
             padding: 12px;
@@ -124,10 +141,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Left Section -->
         <div class="left-section"></div>
-
-        <!-- Right Section -->
         <div class="right-section">
             <div class="form-container">
                 <h2>Create Account</h2>
@@ -140,9 +154,14 @@
                         <label for="email" class="form-label">Email Address</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
                     </div>
-                    <div class="mb-3">
+                    
+                    <div class="mb-3 password-container">
                         <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+                        <div style="position: relative;">
+                            <input type="password" class="form-control" id="password" placeholder="Create a password" required>
+                            <i class="fas fa-eye toggle-password" id="togglePassword" 
+                               style="position: absolute; top: 50%; right: 15px; transform: translateY(-50%); cursor: pointer; font-size: 18px; color: #666;"></i>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Sign Up</button>
                 </form>
@@ -154,5 +173,15 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordField = document.getElementById('password');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordField.type === 'password' ? 'text' : 'password';
+            passwordField.type = type;
+            this.classList.toggle('fa-eye-slash'); // Toggles between eye and eye-slash icons
+        });
+    </script>
 </body>
 </html>
