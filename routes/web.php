@@ -23,3 +23,8 @@ Route::get('create-account', function () {
 Route::get('/login-account', function () {
     return view('login-account'); 
 }); 
+
+Route::get('/confirmation', function () {
+    return view('confirmation'); 
+});
+
