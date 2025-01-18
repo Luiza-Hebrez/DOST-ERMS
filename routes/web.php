@@ -28,3 +28,14 @@ Route::get('/confirmation', function () {
     return view('confirmation'); 
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/event', function () {
+    return view('event');
+});
+
+
+
+

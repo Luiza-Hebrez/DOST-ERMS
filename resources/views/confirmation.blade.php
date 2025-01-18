@@ -13,13 +13,13 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('/image/confirmaccbg.jpg') no-repeat center center;
+            background: url('/image/confirmlogo.png') no-repeat center center;
             background-size: cover;
             font-family: Arial, sans-serif;
         }
 
         .confirmation-container {
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             padding: 50px;
             border-radius: 24px;
             text-align: center;
